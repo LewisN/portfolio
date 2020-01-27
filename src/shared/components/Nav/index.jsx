@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Styles';
+import { NavIcon, NavIconInner } from './Styles';
 
 /**
  * @class Nav
@@ -9,9 +10,18 @@ import './Styles';
 class Nav extends Component {
   render() {
     return (
-      <div className="Nav">
-        Nav
-      </div>
+      <NavIcon
+        type="button"
+        aria-label="Menu"
+        aria-controls="navigation"
+        onClick={() => this.props.dispatch({ type: 'TOGGLE_NAV' })}
+        open={this.props.open}
+      >
+        <NavIconInner />
+        <NavIconInner />
+        <NavIconInner />
+        <NavIconInner />
+      </NavIcon>
     );
   }
 }
@@ -19,6 +29,8 @@ class Nav extends Component {
 /* 
  * mapStateToProps
  */
-const mapStateToProps = state => ({ ...state });
+const mapStateToProps = state => ({ 
+  open: state.open,
+});
  
 export default connect(mapStateToProps)(Nav);

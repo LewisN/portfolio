@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './Styles';
-import { Header, ProjectList, Footer, ContactForm } from '../shared/components';
+import { Header, ProjectList, Footer, ContactForm, Tagline } from '../shared/components';
 import { connect } from 'react-redux';
 
 /**
@@ -12,7 +12,7 @@ class Home extends Component {
     return (
       <Fragment>
         <Header />
-        Main Tagline
+        <Tagline />
         <ProjectList />
         <ContactForm />
         <Footer />

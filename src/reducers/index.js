@@ -1,15 +1,14 @@
-import { ADD_ARTICLE } from '../constants/action-types';
+import { TOGGLE_NAV } from '../constants/action-types';
 
 export const initialState = {
-  work: []
+  open: false,
 };
 
 export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_ARTICLE:
-      return Object.assign({}, state, {
-        articles: state.work.concat(action.payload)
-      });
+    case TOGGLE_NAV:
+      console.log('TOGGLE_NAV');
+      return Object.assign({}, state, { open: !state.open });
 
     default:
       return state;
