@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './ProjectPreview.css';
+import ProjectPreview from '../ProjectPreview'
+import './Styles';
 
 /**
- * @class ProjectPreview
+ * @class ProjectList
  * @extends {Component}
  */
-class ProjectPreview extends Component {
+class ProjectList extends Component {
   render() {
     return (
-      <div className="ProjectPreview">
-        ProjectPreview
+      <div className="ProjectList">
+        <ProjectPreview />
       </div>
     );
   }
@@ -21,4 +22,4 @@ class ProjectPreview extends Component {
  */
 const mapStateToProps = state => ({ ...state });
  
-export default connect(mapStateToProps)(ProjectPreview);
+export default connect(mapStateToProps)(ProjectList);

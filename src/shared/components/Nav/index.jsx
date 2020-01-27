@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './Footer.css';
+import './Styles';
 
 /**
- * @class Footer
+ * @class Nav
  * @extends {Component}
  */
-class Footer extends Component {
+class Nav extends Component {
   render() {
     return (
-      <div className="Footer">
-        Footer
+      <div className="Nav">
+        Nav
       </div>
     );
   }
@@ -21,4 +21,4 @@ class Footer extends Component {
  */
 const mapStateToProps = state => ({ ...state });
  
-export default connect(mapStateToProps)(Footer);
+export default connect(mapStateToProps)(Nav);

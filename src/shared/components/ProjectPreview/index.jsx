@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './ContactForm.css';
+import './Styles';
 
 /**
- * @class ContactForm
+ * @class ProjectPreview
  * @extends {Component}
  */
-class ContactForm extends Component {
+class ProjectPreview extends Component {
   render() {
     return (
-      <div className="ContactForm">
-        ContactForm
+      <div className="ProjectPreview">
+        ProjectPreview
       </div>
     );
   }
@@ -20,5 +20,5 @@ class ContactForm extends Component {
  * mapStateToProps
  */
 const mapStateToProps = state => ({ ...state });
-
-export default connect(mapStateToProps)(ContactForm);
+ 
+export default connect(mapStateToProps)(ProjectPreview);
