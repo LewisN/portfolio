@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProjectPreview from '../ProjectPreview/ProjectPreview'
+import ProjectPreview from '../ProjectPreview'
 import './ProjectList.css';
 
 /**

@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Nav from '../Nav/Nav';
-import './Header.css';
+import './Styles.js';
 
 /**
- * @class Header
+ * @class Nav
  * @extends {Component}
  */
-class Header extends Component {
+class Nav extends Component {
   render() {
     return (
-      <div className="Header">
-        Header
-        <Nav />
+      <div className="Nav">
+        Nav
       </div>
     );
   }
@@ -23,4 +21,4 @@ class Header extends Component {
  */
 const mapStateToProps = state => ({ ...state });
  
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(Nav);
