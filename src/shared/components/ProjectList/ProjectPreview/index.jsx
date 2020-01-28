@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './Styles';
+import { StyledProjectPreview, StyledProjectPreviewInner, Caption } from './Styles';
 
 /**
  * @class ProjectPreview
@@ -9,9 +9,14 @@ import './Styles';
 class ProjectPreview extends Component {
   render() {
     return (
-      <div className="ProjectPreview">
-        ProjectPreview
-      </div>
+      <StyledProjectPreview>
+        <StyledProjectPreviewInner>
+          <Caption>
+            <h3>{this.props.name}</h3>
+            <p>{this.props.caption}</p>
+          </Caption>
+        </StyledProjectPreviewInner>
+      </StyledProjectPreview>
     );
   }
 }
