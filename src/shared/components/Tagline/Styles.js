@@ -4,9 +4,9 @@ import { container } from '../../css';
 export const StyledTagline = styled.p`
   ${container}
   
-  font-family: 'Merriweather', serif;
+  font-family: ${props => props.theme.fonts.heading};
   line-height: 1.8;
-  font-size: 1.5rem;
+  font-size: ${props => props.theme.fonts.sizes.small};
   padding-top: 50px;
   color: #000;
 
@@ -16,7 +16,7 @@ export const StyledTagline = styled.p`
   }
 
   a {
-    color: #dc133b;
+    color: ${props => props.theme.palette.accent};
     text-decoration: none;
 
     &:hover {
@@ -25,7 +25,7 @@ export const StyledTagline = styled.p`
   }
 
   @media (min-width: 768px) {
-    font-size: 1.8rem;
+    font-size: ${props => props.theme.fonts.sizes.medium};
     padding-top: 200px;
   }
 `;
