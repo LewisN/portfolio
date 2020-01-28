@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
-export const Image = styled.div`
-  display: block;
+export const StyledLogo = styled.div`
+  display: inline-block;
   height: 50px;
   width: 50px;
-  float: left;
   fill: #222;
+  ${(props) => props.color ? `
+    ${props.color === 'white' ? 'fill: #FFF;' : ''}
+  ` : ''};
 `;
