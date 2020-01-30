@@ -1,10 +1,14 @@
+export { default as Button } from './Button';
 export { default as ContactForm } from './ContactForm';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as Icon } from './Icon';
+export { default as Layout } from './Layout';
 export { default as Logo } from './Logo';
 export { default as Nav } from './Nav';
 export { default as PageError } from './PageError';
 export { default as ProjectList } from './ProjectList';
 export { default as SocialIcons } from './SocialIcons';
 export { default as Tagline } from './Tagline';
+export { default as TextArea } from './TextArea';
+export { default as TextInput } from './TextInput';
