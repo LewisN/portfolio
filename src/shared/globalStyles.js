@@ -6,18 +6,25 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 100%;
-  } /*16px*/
-
-  body {
-    background-color: white;
-    font-family: ${props => props.theme.fonts.body};
-    font-weight: 400;
-    line-height: 1.65;
-    color: #333;
+    box-sizing: border-box;
   }
 
-  p {
-    margin-bottom: 1.15rem;
+  html, body {
+    background-color: white;
+    font-family: ${props => props.theme.fonts.body};
+    font-size: 11px;
+    line-height: 1;
+    color: #111;
+  }
+
+  body > * {
+    font-size: 1.6rem;
+    line-height: 3rem;
+  }
+
+  *,
+  *:before, *:after {
+    box-sizing: inherit;
   }
 
   h1,
@@ -26,34 +33,47 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5 {
     margin: 2.75rem 0 1.05rem;
-    font-family: ${props => props.theme.fonts.heading}
-    font-weight: 400;
+    font-family: ${props => props.theme.fonts.heading};
+    font-weight: 900;
     line-height: 1.15;
+    letter-spacing: -0.03rem;
   }
 
   h1 {
-    margin-top: 0;
-    font-size: ${props => props.theme.fonts.sizes.extraLarge};
+    margin-bottom: 3rem;
+    font-size: 6.103515625rem;
+    line-height: 7rem;
   }
 
   h2 {
-    font-size: ${props => props.theme.fonts.sizes.large};
+    margin-bottom: 3rem;
+    font-size: 4.8828125rem;
+    line-height: 6rem;
   }
 
   h3 {
-    font-size: ${props => props.theme.fonts.sizes.medium};
+    margin-bottom: 3rem;
+    font-size: 3.90625rem;
+    line-height: 6rem;
   }
 
   h4 {
-    font-size: ${props => props.theme.fonts.sizes.small};
+    margin-bottom: 3rem;
+    font-size: 3.125rem;
+    line-height: 4rem;
   }
 
   h5 {
-    font-size: ${props => props.theme.fonts.sizes.extraSmall};
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    line-height: 3rem;
   }
 
-  small {
-    font-size: ${props => props.theme.fonts.sizes.extraExtraSmall};
+  p {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    font-weight: 400;
   }
 `;
 

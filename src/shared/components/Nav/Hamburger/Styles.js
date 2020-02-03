@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NavIconInner = styled.span`
+export const HamburgerLine = styled.span`
   display: block;
   position: absolute;
   height: 4px;
@@ -28,16 +28,16 @@ export const NavIconInner = styled.span`
   }
 `;
 
-export const NavIcon = styled.button`
+export const HamburgerInner = styled.div`
   display: inline-block;
   width: 25px;
-  height: 25px;
+  height: 21px;
   position: relative;
   transform: rotate(0deg);
   transition: .5s ease-in-out;
-  cursor: pointer;
-  outline: none;
+`;
 
+export const StyledHamburger = styled.button`
   /* Button Reset */
   border: none;
   margin: 0;
@@ -55,8 +55,16 @@ export const NavIcon = styled.button`
     padding: 0;
   }
 
+  display: inline-block;
+  background: white;
+  border-radius: 3px;
+  padding: 1rem;
+  line-height: 0;
+  cursor: pointer;
+  outline: none;
+
   ${(props) => props.navIsOpen ? `
-    ${NavIconInner} {
+    ${HamburgerLine} {
       background: black !important; 
       &:nth-child(1) {
         top: 18px;

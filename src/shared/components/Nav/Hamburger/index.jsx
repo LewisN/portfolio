@@ -1,30 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { NavIcon, NavIconInner } from './Styles';
+import { setNavState } from '../../../../actions';
+import {
+  StyledHamburger,
+  HamburgerInner,
+  HamburgerLine,
+} from './Styles';
 
-/**
- * @class Hamburger
- * @extends {Component}
- */
-class Hamburger extends Component {
-  render() {
-    return (
-      <NavIcon
-        type="button"
-        aria-label="Open the menu"
-        onClick={() => this.props.dispatch({ type: 'TOGGLE_NAV' })}
-        navIsOpen={this.props.navIsOpen}
-      >
-        <NavIconInner aria-hidden="true" />
-        <NavIconInner aria-hidden="true" />
-        <NavIconInner aria-hidden="true" />
-        <NavIconInner aria-hidden="true" />
-      </NavIcon>
-    );
-  }
-}
-
+const Hamburger = props => (
+  <StyledHamburger
+    type='button'
+    aria-label={props.navIsOpen ? 'Close the navigation' : 'Open the navigation' }
+    onClick={() => props.setNavState('TOGGLE')}
+    {...props}
+  >
+    <HamburgerInner>
+      <HamburgerLine aria-hidden='true' />
+      <HamburgerLine aria-hidden='true' />
+      <HamburgerLine aria-hidden='true' />
+      <HamburgerLine aria-hidden='true' />
+    </HamburgerInner>
+  </StyledHamburger>
+);
 
 const mapStateToProps = state => ({  navIsOpen: state.navIsOpen });
- 
-export default connect(mapStateToProps)(Hamburger);
+
+export default connect(mapStateToProps, { setNavState })(Hamburger);

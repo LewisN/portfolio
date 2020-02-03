@@ -1,66 +1,26 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import { StyledProjectList } from './Styles';
+import { PROJECTS_PATH } from '../../../constants/paths';
 import { connect } from 'react-redux';
 import ProjectPreview from './ProjectPreview'
-import { StyledProjectList } from './Styles';
 
-const projects = [
-  {
-    name: 'Project 1',
-    img: '',
-    caption: 'Desc',
-  },
-  {
-    name: 'Project 2',
-    img: '',
-    caption: 'Desc',
-  },
-  {
-    name: 'Project 3',
-    img: '',
-    caption: 'Desc',
-  },
-  {
-    name: 'Project 4',
-    img: '',
-    caption: 'Desc',
-  },
-  {
-    name: 'Project 5',
-    img: '',
-    caption: 'Desc',
-  },
-  {
-    name: 'Project 6',
-    img: '',
-    caption: 'Desc',
-  },
-];
-
-/**
- * @class ProjectList
- * @extends {Component}
- */
-class ProjectList extends Component {
-  render() {
-    return (
-      <StyledProjectList>
-        {projects.map((project) => (
-          <li>
-            <ProjectPreview
-              key={project.name}
-              name={project.name}
-              caption={project.caption}
-            ></ProjectPreview>
+const ProjectList = props => (
+  <Fragment>
+    {props.isLoaded && props.items.length && (
+      <StyledProjectList {...props}>
+        {props.items.map(project => (
+          <li key={project.fields.name}>
+            <Link to={`${PROJECTS_PATH}/${project.fields.path}`}>
+              <ProjectPreview project={project} />
+            </Link>
           </li>
         ))}
       </StyledProjectList>
-    );
-  }
-}
+    )}
+  </Fragment>
+);
 
-/* 
- * mapStateToProps
- */
-const mapStateToProps = state => ({ ...state });
- 
+const mapStateToProps = state => ({ ...state.projects });
+
 export default connect(mapStateToProps)(ProjectList);

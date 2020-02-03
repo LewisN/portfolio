@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import Nav from '../Nav';
-import { StyledHeader } from './Styles';
 import { Logo } from '../';
+import {
+  StyledHeader,
+  StyledHeaderInner,
+} from './Styles';
 
-/**
- * @class Header
- * @extends {Component}
- */
-class Header extends Component {
-  render() {
-    return (
-      <StyledHeader>
-        <Logo />
+const Header = () => (
+  <StyledHeader>
+    <StyledHeaderInner>
+      <div>
+        <Logo size="large" />
+      </div>
+      <div>
         <Nav />
-      </StyledHeader>
-    );
-  }
-}
-
-/* 
- * mapStateToProps
- */
-const mapStateToProps = state => ({ ...state });
+      </div>
+    </StyledHeaderInner>
+  </StyledHeader>
+);
  
-export default connect(mapStateToProps)(Header);
+export default Header;

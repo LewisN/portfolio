@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import InlineSVG from 'svg-inline-react';
 import linkedinLogo from '../../assets/linkedin';
 import githubLogo from '../../assets/github';
@@ -9,24 +9,16 @@ const iconMap = {
   'github': githubLogo,
 };
 
-/**
- * @class Icon
- * @extends {Component}
- */
-class Icon extends Component {
-  render() {
-    return (
-      <StyledIcon
-        icon
-        color={this.props.color}
-        href={this.props.href}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <InlineSVG src={iconMap[this.props.name]} />
-      </StyledIcon>
-    );
-  }
-}
+const Icon = props => (
+  <StyledIcon
+    icon
+    color={props.color}
+    href={props.href}
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <InlineSVG src={iconMap[props.name]} />
+  </StyledIcon>
+);
 
 export default Icon;

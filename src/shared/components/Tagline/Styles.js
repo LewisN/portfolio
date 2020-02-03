@@ -3,12 +3,15 @@ import { container } from '../../css';
 
 export const StyledTagline = styled.p`
   ${container}
-  
-  font-family: ${props => props.theme.fonts.heading};
-  line-height: 1.8;
-  font-size: ${props => props.theme.fonts.sizes.small};
-  padding-top: 50px;
+  margin-top: 0;
+  font-size: 2.5rem;
+  line-height: 2;
+  padding-top: 20px;
   color: #000;
+
+  /* line-height: 4rem;
+  font-size: 2rem;
+  padding-right: 40px; */
 
   em {
     font-weight: 900;
@@ -25,7 +28,6 @@ export const StyledTagline = styled.p`
   }
 
   @media (min-width: 768px) {
-    font-size: ${props => props.theme.fonts.sizes.medium};
-    padding-top: 200px;
+    padding-top: 160px;
   }
 `;

@@ -5,7 +5,7 @@ export const StyledIcon = styled.a`
   
   ${props => props.icon ? `
     svg {
-      height: 25px;
+      height: 2.4rem;
       width: auto;
     }
   ` : ''}

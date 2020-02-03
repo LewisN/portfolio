@@ -1,29 +1,15 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { StyledProjectPreview, StyledProjectPreviewInner, Caption } from './Styles';
+import React from 'react';
+import { StyledProjectPreview, StyledProjectPreviewInner, StyledCaption } from './Styles';
 
-/**
- * @class ProjectPreview
- * @extends {Component}
- */
-class ProjectPreview extends Component {
-  render() {
-    return (
-      <StyledProjectPreview>
-        <StyledProjectPreviewInner>
-          <Caption>
-            <h3>{this.props.name}</h3>
-            <p>{this.props.caption}</p>
-          </Caption>
-        </StyledProjectPreviewInner>
-      </StyledProjectPreview>
-    );
-  }
-}
-
-/* 
- * mapStateToProps
- */
-const mapStateToProps = state => ({ ...state });
+const ProjectPreview = props => (
+  <StyledProjectPreview>
+    <StyledProjectPreviewInner background={props.project.fields.previewImage.fields.file.url}>
+      <StyledCaption>
+        <h2>{props.project.fields.name}</h2>
+        <p>{props.project.fields.previewCaption}</p>
+      </StyledCaption>
+    </StyledProjectPreviewInner>
+  </StyledProjectPreview>
+);
  
-export default connect(mapStateToProps)(ProjectPreview);
+export default ProjectPreview;

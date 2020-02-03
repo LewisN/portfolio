@@ -24,7 +24,7 @@ export const Overlay = styled.div`
 export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  font-size: 4.5rem;
+  font-size: 5.5rem;
   font-weight: 600;
   margin: 0 auto;
 

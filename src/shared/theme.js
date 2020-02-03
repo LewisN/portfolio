@@ -9,15 +9,8 @@ theme.palette = {
 };
 
 theme.fonts = {
-  heading: 'Merriweather, serif',
-  body: 'Helvetica, Arial, sans-serif',
-  sizes: {
-    extraLarge: '3.052rem',
-    large: '2.441rem',
-    medium: '1.953rem',
-    small: '1.563rem',
-    extraSmall: '1.25rem',
-  },
+  heading: 'Source Sans Pro, sans-serif',
+  body: 'Merriweather, serif',
 };
 
 export default theme;

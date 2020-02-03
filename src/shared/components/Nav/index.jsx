@@ -1,29 +1,18 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
 import Hamburger from './Hamburger';
 import FullScreenNav from './FullScreenNav';
 
 const $root = document.getElementById('root');
 
-/**
- * @class Nav
- * @extends {Component}
- */
-class Nav extends Component {
-  render() {
-    return (
-      <Fragment>
-        <Hamburger />
-        {ReactDOM.createPortal(
-          <FullScreenNav />,
-          $root,
-        )}
-      </Fragment>
-    );
-  }
-}
-
-const mapStateToProps = state => ({  navIsOpen: state.navIsOpen });
+const Nav = () => (
+  <Fragment>
+    <Hamburger />
+    {ReactDOM.createPortal(
+      <FullScreenNav />,
+      $root,
+    )}
+  </Fragment>
+);
  
-export default connect(mapStateToProps)(Nav);
+export default Nav;

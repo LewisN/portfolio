@@ -1,9 +1,20 @@
 import styled from 'styled-components';
 
 
-export const Caption = styled.div`
+export const StyledCaption = styled.div`
   margin: auto;
   text-align: center;
+
+  h2 {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    font-style: italic;
+  }
 
   @media (min-width: 992px) {
     opacity: 0;
@@ -21,7 +32,8 @@ export const StyledProjectPreviewInner = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   transform: translateZ(0);
-  background-image: url('https://picsum.photos/400/400');
+  background-image: url(${props => props.background});
+  padding: 0 1rem;
 
   &:before {
     content: "";
@@ -64,7 +76,7 @@ export const StyledProjectPreviewInner = styled.div`
     }
   }
 
-  &:hover ${Caption} {
+  &:hover ${StyledCaption} {
     opacity: 1;
     -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;

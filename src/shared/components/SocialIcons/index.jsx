@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Icon } from '../index';
 import { StyledSocialIcons } from './Styled';
 
@@ -13,26 +13,18 @@ const socials = [
   }
 ];
 
-/**
- * @class SocialIcons
- * @extends {Component}
- */
-class SocialIcons extends Component {
-  render() {
-    return (
-      <StyledSocialIcons>
-        {socials.map((social) => (
-          <li>
-            <Icon
-              name={social.name}
-              href={social.href}
-              color={this.props.color}
-            />
-          </li>
-        ))}
-      </StyledSocialIcons>
-    );
-  }
-}
+const SocialIcons = props => (
+  <StyledSocialIcons>
+    {socials.map((social) => (
+      <li key={social.name}>
+        <Icon
+          name={social.name}
+          href={social.href}
+          color={props.color}
+        />
+      </li>
+    ))}
+  </StyledSocialIcons>
+);
 
 export default SocialIcons;

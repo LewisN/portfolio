@@ -7,13 +7,15 @@ export const StyledSocialIcons = styled.ul`
 
   li {
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 1rem;
+    line-height: 0;
+    vertical-align: middle;
 
     &:first-of-type {
       margin-left: 0;
     }
 
-    &:first-of-type {
+    &:last-of-type {
       margin-right: 0;
     }
   }
