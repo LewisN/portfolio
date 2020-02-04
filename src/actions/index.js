@@ -8,7 +8,6 @@ import {
   REQUEST_ANIMATION_LIBRARIES_SUCCESS,
   REQUEST_ANIMATION_LIBRARIES_FAILURE,
 } from '../constants/action-types';
-import Contentful from '../Contentful';
 
 /**
  * @typedef {Object} Action
@@ -64,19 +63,14 @@ export const requestProjectsFailure = error => ({
  * @returns {Function}
  */
 export const fetchProjects = () => {
-  let projects;
   return async dispatch => {
     dispatch(requestProjects);
 
-    await Contentful
-      .getEntries({
-        content_type: 'project',
-        order: '-fields.date'
-      })
-      .then(json => json ? projects = json : null)
+    const response = await fetch('https://e6iyuj4e3g.execute-api.us-east-1.amazonaws.com/dev/fetchProjects');
+    const json = await response.json();
 
     return dispatch(
-      projects ? requestProjectsSuccess(projects) : requestProjectsFailure('Failed to retrieve projects')
+      json ? requestProjectsSuccess(json) : requestProjectsFailure('Failed to retrieve projects')
     );
   }
 };
