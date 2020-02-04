@@ -38,7 +38,7 @@ const Form = props => {
   const handleFormSubmission = (values, { setSubmitting, isSubmitting }) => {
     setSubmitting(true);
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', process.env.REACT_APP_MAIL_ENDPOINT, true);
+    xhr.open('POST', 'https://f1ssq2rq4l.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer', true);
     xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
     xhr.send(JSON.stringify(values));
