@@ -12,7 +12,7 @@ const Project = props => {
     <Layout>
       <Helmet>
         <title>Lewis Needham - Front End Developer</title>
-        <meta name="description" content="Portfolio of Lewis Needham - Front End Developer based in Toronto." />
+        <meta name="description" content="Portfolio of Lewis Needham - Front End Developer. Experienced JavaScript (ES6+) and React developer based in Toronto, ON." />
       </Helmet>
       
       {!props.project ? <Fragment>
@@ -21,7 +21,7 @@ const Project = props => {
         <Fragment>
           <Helmet>
             <title>Lewis Needham - {props.project.fields.name} Project</title>
-            <meta name="description" content={props.project.fields.technologyList ? `Technologies: ${props.project.fields.technologyList.join(' ')}` : 'Portfolio of Lewis Needham - Front End Developer based in Toronto.'}/>
+            <meta name="description" content={props.project.fields.technologyList ? `Technologies: ${props.project.fields.technologyList.join(' ')}` : 'Portfolio of Lewis Needham - Front End Developer. Experienced JavaScript (ES6+) and React developer based in Toronto, ON.'}/>
           </Helmet>
           <Hero>
             <ProjectIntro

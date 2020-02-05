@@ -24,7 +24,7 @@ const Home = () => {
     <Layout>
       <Helmet>
         <title>Lewis Needham - Front End Developer</title>
-        <meta name="description" content="Portfolio of Lewis Needham - Front End Developer based in Toronto." />
+        <meta name="description" content="Portfolio of Lewis Needham - Front End Developer. Experienced JavaScript (ES6+) and React developer based in Toronto, ON." />
       </Helmet>
 
       <Hero>
