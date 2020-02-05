@@ -2,8 +2,20 @@ import styled from 'styled-components';
 
 
 export const StyledCaption = styled.div`
-  margin: auto;
   text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-image: linear-gradient(rgba(46,30,30,0) 40%,rgba(0, 0, 0, 0.82));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 10px;
 
   h2 {
     font-size: 2.4rem;
@@ -14,10 +26,6 @@ export const StyledCaption = styled.div`
   p {
     margin: 0;
     font-style: italic;
-  }
-
-  @media (min-width: 992px) {
-    opacity: 0;
   }
 `;
 
@@ -43,7 +51,6 @@ export const StyledProjectPreviewInner = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: #333;
     opacity: 0.85;
   }
 
@@ -78,23 +85,20 @@ export const StyledProjectPreviewInner = styled.div`
 
   &:hover ${StyledCaption} {
     opacity: 1;
-    -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;
-    -o-transition: all 0.7s ease;
   }
 `;
 
 
 export const StyledProjectPreview = styled.div`
   display: block;
-  background: grey;
-  height: 300px;
+  height: 250px;
   color: #fafafa;
   position: relative;
   overflow: hidden;
 
   @media (min-width: 992px) {
-    height: 450px;
+    height: 330px;
   }
 
   a {
