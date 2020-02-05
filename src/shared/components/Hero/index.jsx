@@ -9,25 +9,23 @@ const Hero = props => {
    * every time the component state updates
    */
   const vanta = useRef(null);
+
+  /*
+   * Fetch Three.js and Vanta libraries if this is the first time they 
+   * are used in the app. They will only ever be loaded once.
+   */
+  props.dispatch(fetchAnimationLibrariesIfNeeded());
   
   useEffect(() => {
     /*
-     * Fetch Three.js and Vanta libraries if this is the first time they 
-     * are used. They will only ever be loaded once.
+     * Initialize Vanta and save the instance in the reference
+     * defined earlier so it can be destroyed on dismount. Only do this
+     * if an instance doesn't already exist or the bgAnimation function
+     * doesn't yet exist (i.e. the scripts are still loading in)
      */
-    props
-      .dispatch(fetchAnimationLibrariesIfNeeded())
-      .then(() => {
-        /**
-         * Initialize Vanta and save the instance in the reference
-         * defined earlier so it can be destroyed on dismount. Only do this
-         * if an instance doesn't already exist or the bgAnimation function
-         * doesn't yet exist (i.e. the scripts are still loading in)
-         */
-        if (!vanta.current && props.animationLibraries.bgAnimation) {
-          vanta.current = props.animationLibraries.bgAnimation();
-        }
-      });
+    if (!vanta.current && props.animationLibraries.bgAnimation) {
+      vanta.current = props.animationLibraries.bgAnimation();
+    }
 
     return () => {
       /*
@@ -38,7 +36,7 @@ const Hero = props => {
         vanta.current.destroy();
       }
     };
-  });
+  }, [props.animationLibraries]);
 
   return (
     <StyledHero className="bgAnim">
