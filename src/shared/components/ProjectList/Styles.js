@@ -27,4 +27,10 @@ export const StyledProjectList = styled.ul`
       width: 33.333%;
     }
   }
+
+  @media (min-width: 1200px) {
+    li {
+      width: 25%;
+    }
+  }
 `;
