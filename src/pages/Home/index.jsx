@@ -23,7 +23,8 @@ const Home = () => {
   return (
     <Layout>
       <Helmet>
-        <title>lewisneedham.com</title>
+        <title>Lewis Needham - Front End Developer</title>
+        <meta name="description" content="Portfolio of Lewis Needham - Front End Developer based in Toronto." />
       </Helmet>
 
       <Hero>

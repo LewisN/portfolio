@@ -11,13 +11,18 @@ const Project = props => {
   return (
     <Layout>
       <Helmet>
-        <title>Project Page</title>
+        <title>Lewis Needham - Front End Developer</title>
+        <meta name="description" content="Portfolio of Lewis Needham - Front End Developer based in Toronto." />
       </Helmet>
       
       {!props.project ? <Fragment>
         <div>404</div>
       </Fragment> : (
         <Fragment>
+          <Helmet>
+            <title>Lewis Needham - {props.project.fields.name} Project</title>
+            <meta name="description" content={props.project.fields.technologyList ? `Technologies: ${props.project.fields.technologyList.join(' ')}` : 'Portfolio of Lewis Needham - Front End Developer based in Toronto.'}/>
+          </Helmet>
           <Hero>
             <ProjectIntro
               name={props.project.fields.name}
