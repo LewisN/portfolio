@@ -5,29 +5,30 @@ import Button from '../Button';
 const ProjectIntro = props => (
   <StyledIntro>
     <StyledTitle>{props.name}</StyledTitle>
-    {props.desc ? (
-      <StyledDesc>
-        <p>{props.desc}</p>
+    {props?.desc ? (
+      <StyledDesc dangerouslySetInnerHTML={{
+        __html: props.desc,
+      }}>
       </StyledDesc>
     ) : ''}
 
-    {props.sideList ? (
+    {props?.sideList ? (
       <StyledList>
         <h3>
           Technologies:
         </h3>
         <ul>
-          {props.sideList.map(item => (
+          {props?.sideList?.map(item => (
             <li key={item}>{item}</li>
           ))}
         </ul>
       </StyledList>
     ) : ''}
 
-    {props.buttons ? (
+    {props?.buttons ? (
       <StyledButtonContainer>
         <StyledButtons>
-          {props.buttons.map(button => (
+          {props?.buttons?.map(button => (
             <Button
               key={button.text}
               text={button.text}
