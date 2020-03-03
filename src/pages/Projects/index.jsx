@@ -26,8 +26,10 @@ const Project = props => {
           <Hero>
             <ProjectIntro
               name={props?.project?.fields?.name}
+              tagline={props?.project?.fields?.tagline}
               desc={props?.project?.fields?.desc}
               sideList={props?.project?.fields?.technologyList}
+              date={props?.project?.fields?.date}
               buttons={props?.project?.fields?.buttons}
             />
           </Hero>

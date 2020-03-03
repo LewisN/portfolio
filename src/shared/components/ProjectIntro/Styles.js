@@ -4,20 +4,36 @@ import { container } from '../../css';
 export const StyledIntro = styled.section`
   ${container}
   padding-bottom: 4rem;
+  padding-top: 2rem;
+
+  @media (min-width: 768px) {
+    padding-top: 0;
+  }
 `;
 
 export const StyledTitle = styled.h1`
   margin-top: 0;
   font-size: 5rem;
   line-height: 5rem;
-  letter-spacing: -0.3rem;
+  letter-spacing: -0.2rem;
+  text-align: left;
 
   @media (min-width: 768px) {
-    font-size: 10rem;
-    padding-top: 7rem;
-    margin-bottom: 7rem;
     line-height: 9rem;
-    letter-spacing: -0.3rem;
+    margin-bottom: 0;
+    text-align: center;
+  }
+`;
+
+export const StyledTagline = styled.h2`
+  font-size: 2rem;
+  margin: 0 0 2rem;
+  line-height: normal;
+  font-weight: 700;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    text-align: center;
   }
 `;
 
@@ -30,24 +46,32 @@ export const StyledDesc = styled.div`
   }
 `;
 
+export const StyledDescContainer = styled.section`
+  max-width: 900px;
+  margin: 0 auto;
+`;
+
 export const StyledList = styled.div`
   display: inline-block;
   vertical-align: top;
   font-style: italic;
-  margin-block-start: 1rem;
+  margin-block-start: 2rem;
   margin-block-end: 1rem;
 
   @media (min-width: 768px) {
-    width: 25%;
-    margin-left: 8.333%;
+    width: auto;
+    margin-right: 8%;
+    max-width: 25%;
   }
 
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding-right: 10px;
     margin: 0;
-    display: inline;
+    display: block;
     line-height: normal;
+    font-style: normal;
+    font-weight: 700;
   }
 
   ul {
@@ -73,6 +97,19 @@ export const StyledList = styled.div`
   @media (min-width: 768px) {
   }
 `;
+
+export const StyledListSection = styled.div`
+  font-style: normal;
+  margin: 10px 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+`
 
 export const StyledButtonContainer = styled.div`
   margin: 3rem 0;

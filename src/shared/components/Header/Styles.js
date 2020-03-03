@@ -36,7 +36,7 @@ export const StyledHeaderInner = styled.div`
   align-items: center;
 
   @media (min-width: 768px) {
-    max-width: 1200px;
+    max-width: 1340px;
     margin: 0 auto;
   }
 `;
