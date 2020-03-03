@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export const StyledIcon = styled.a`
+export const StyledIcon = styled.span`
+  line-height: normal;
   fill: ${props => props.color || ''};
   
   ${props => props.icon ? `
