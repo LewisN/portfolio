@@ -3,7 +3,11 @@ import { StyledTagline } from './Styles';
 
 const Tagline = () => (
   <StyledTagline>
-    Hi! I'm <em>Lewis Needham</em>, a front-end developer at conversion rate optimization agency <a href="http://www.userconversion.com"><em>User Conversion</em></a>.
+    <p>
+      <span role="img" aria-label="waving hand emoji">👋</span>
+      <br />
+      Hi! I'm Lewis Needham, a <em>front end web developer</em> based in Toronto
+    </p>
   </StyledTagline>
 );
 
