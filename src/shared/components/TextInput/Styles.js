@@ -6,7 +6,7 @@ export const StyledTextInput = styled.input`
   text-decoration: none;
   border-radius: 3px;
   color: ${props => props.theme.palette.secondary};
-  border: 1px solid ${props => props.theme.palette.secondary};
+  border: none;
   font-weight: 700;
   padding: 10px;
   background-color: ${props => props.theme.palette.primary};
@@ -21,9 +21,9 @@ export const StyledTextInput = styled.input`
 
   &:hover {
     transition: all 0.5s ease;
-    border: 1px solid ${props => props.theme.palette.secondary};
     background-color: ${props => props.theme.palette.secondary};
     color: ${props => props.theme.palette.primary};
+    border: none;
   }
 
   ${props => props.error ? `
