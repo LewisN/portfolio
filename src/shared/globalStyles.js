@@ -17,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
     color: #111;
   }
 
+  body {
+    background-image: linear-gradient(180deg, transparent 40%, #efefef 100%);
+  }
+
   body > * {
     font-size: 1.6rem;
     line-height: 3rem;
