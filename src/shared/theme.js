@@ -10,7 +10,8 @@ theme.palette = {
 
 theme.fonts = {
   heading: 'Source Sans Pro, sans-serif',
-  body: 'Merriweather, serif',
+  body: 'Source Sans Pro, sans-serif',
+  accent: 'Merriweather, serif',
 };
 
 export default theme;
