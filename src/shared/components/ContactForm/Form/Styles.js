@@ -25,6 +25,10 @@ export const StyledForm = styled.form`
     margin: 10px auto 0;
   }
 
+  label {
+    font-weight: 600;
+  }
+
   ${props => props.contactFormLocked ? `
     background: red;
   ` : ''}
@@ -32,10 +36,8 @@ export const StyledForm = styled.form`
 
 export const StyledErrorMessage = styled.div`
   color: ${props => props.theme.palette.error};
-  margin-top: 1rem;
 `;
 
 export const StyledSuccessMessage = styled.div`
   color: ${props => props.theme.palette.success};
-  margin-top: 1rem;
 `;

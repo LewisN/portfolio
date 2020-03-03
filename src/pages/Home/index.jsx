@@ -1,12 +1,26 @@
 import React, { useEffect } from 'react';
-import { Layout, ProjectList, ContactForm, Tagline, SocialIcons, Hero } from '../../shared/components';
-import { Container, SocialIconsContainer } from './Styles';
+import {
+  Layout,
+  ProjectList,
+  ContactForm,
+  Tagline,
+  SocialIcons,
+  Hero,
+} from '../../shared/components';
+import {
+  Container,
+  SocialIconsContainer,
+  StyledHeading,
+  StyledSection,
+} from './Styles';
 import { Helmet } from 'react-helmet';
 
 const Home = () => {
   useEffect(() => {
-    // Decode entities in the URL
-    // Sometimes a URL like #/foo#bar will be encoded as #/foo%23bar
+    /*
+      Decode entities in the URL
+      Sometimes a URL like #/foo#bar will be encoded as #/foo%23bar
+    */
     window.location.hash = window.decodeURIComponent(window.location.hash);
     const scrollToAnchor = () => {
       const hashParts = window.location.hash.split('#');
@@ -33,10 +47,18 @@ const Home = () => {
           <SocialIcons />
         </SocialIconsContainer>
       </Hero>
-      <ProjectList id="projects" />
-      <Container id="contact">
-        <ContactForm />
-      </Container>
+
+      <StyledSection>
+        <StyledHeading>Projects</StyledHeading>
+        <ProjectList id="projects" />
+      </StyledSection>
+
+      <StyledSection>
+        <StyledHeading>Get in touch</StyledHeading>
+        <Container id="contact">
+          <ContactForm />
+        </Container>
+      </StyledSection>
     </Layout>
   );
 }

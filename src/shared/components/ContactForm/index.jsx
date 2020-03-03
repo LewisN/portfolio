@@ -1,25 +1,22 @@
 import React from 'react';
 import Form from './Form';
-import {
-  FormContainer,
-  StyledFormHeader,
-} from './Styles';
+import { FormContainer } from './Styles';
 
 const ContactForm = props => {
   /* Names must be unique as they are IDs */
   const fields = [
     {
-      name: 'name',
+      name: 'Name',
       initialValue: '',
       component: 'TextInput',
     },
     {
-      name: 'email',
+      name: 'Email',
       initialValue: '',
       component: 'TextInput',
     },
     {
-      name: 'message',
+      name: 'Message',
       initialValue: '',
       component: 'TextArea',
     }
@@ -27,7 +24,6 @@ const ContactForm = props => {
 
   return (
     <FormContainer {...props}>
-      <StyledFormHeader>Get in touch</StyledFormHeader>
       <Form fields={fields} />
     </FormContainer>
   );
