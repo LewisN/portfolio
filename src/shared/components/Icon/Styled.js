@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const StyledIcon = styled.span`
   line-height: normal;
-  fill: ${props => props.color || ''};
   
   ${props => props.icon ? `
     svg {
@@ -13,6 +12,7 @@ export const StyledIcon = styled.span`
 
   svg {
     transition: .2s ease all;
+    fill: ${props => props.color || ''};
   }
 
   &:hover svg {
