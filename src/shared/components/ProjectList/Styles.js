@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledProjectList = styled.ul`
-  margin: 10px 0;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -30,7 +29,8 @@ export const StyledProjectList = styled.ul`
 
   @media (min-width: 1200px) {
     li {
-      width: 25%;
+      width: 20%;
+      padding: 5px;
     }
   }
 `;

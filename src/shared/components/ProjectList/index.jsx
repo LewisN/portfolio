@@ -8,15 +8,15 @@ import ProjectPreview from './ProjectPreview'
 const ProjectList = props => (
   <Fragment>
     {props.isLoaded && props.items.length && (
-      <StyledProjectList {...props}>
-        {props.items.map(project => (
-          <li key={project.fields.name}>
-            <Link to={`${PROJECTS_PATH}/${project.fields.path}`}>
-              <ProjectPreview project={project} />
-            </Link>
-          </li>
-        ))}
-      </StyledProjectList>
+        <StyledProjectList {...props}>
+          {props.items.map(project => (
+            <li key={project.fields.name}>
+              <Link to={`${PROJECTS_PATH}/${project.fields.path}`}>
+                <ProjectPreview project={project} />
+              </Link>
+            </li>
+          ))}
+        </StyledProjectList>
     )}
   </Fragment>
 );

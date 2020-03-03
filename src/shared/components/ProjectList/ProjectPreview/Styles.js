@@ -1,31 +1,58 @@
 import styled from 'styled-components';
 
-
 export const StyledCaption = styled.div`
   text-align: center;
   margin: 0 auto;
   position: absolute;
-  bottom: 0;
-  top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  background-image: linear-gradient(rgba(46,30,30,0) 40%,rgba(0, 0, 0, 0.82));
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 10px;
+  padding: 0 5px;
 
   h2 {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     line-height: 3rem;
     margin: 0;
+    display: inline;
+    background-image: linear-gradient(to right, transparent 50%, ${props => props.theme.palette.accent} 50%);
+    background-size: 200%;
+    background-position: -100%;
+    transition: all 0.4s;
+    padding: 3px;
+    opacity: 1;
+    color: #FFF;
   }
 
   p {
     margin: 0;
     font-style: italic;
+  }
+
+  @media (min-width: 992px) {
+    h2 {
+      opacity: 0;
+      background-position: 0;
+    }
+  }
+`;
+
+export const StyledIcon = styled.div`
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  line-height: normal;
+  display: none;
+
+  svg {
+    fill: ${props => props.theme.palette.accent};
+    height: 3.5rem;
+    background-color: white;
+    border-radius: 50%;
   }
 `;
 
@@ -44,61 +71,63 @@ export const StyledProjectPreviewInner = styled.div`
   padding: 0 1rem;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.85;
+    opacity: 0.7;
+    background: #FFF;
   }
 
   @media (min-width: 992px) {
-    /* Animation */
-    vertical-align: middle;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    backface-visibility: hidden;
-    transition-property: color;
-    transition-duration: 0.4s;
+    filter: grayscale(100%);
 
     &:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: #dc133b;
-      opacity: 0.9;
-      transform: scale(0);
-      transition-property: transform;
-      transition-duration: 0.4s;
-      transition-timing-function: ease-out;
+      opacity: 0.7;
+      transition-property: all;
+      transition-duration: 0.1s;
+      transition-timing-function: ease;
     }
 
-    &:hover:before {
-      transform: scale(1);
-    }
-  }
+    &:hover {
+      filter: grayscale(0%);
+      transition: all 0.1s ease;
 
-  &:hover ${StyledCaption} {
-    opacity: 1;
-    transition: all 0.7s ease;
+      &:before {
+        opacity: 0;
+      }
+    }
   }
 `;
-
 
 export const StyledProjectPreview = styled.div`
   display: block;
   height: 250px;
-  color: #fafafa;
+  color: ${props => props.theme.palette.secondary};
   position: relative;
   overflow: hidden;
 
+  &:hover {
+    ${StyledCaption} {
+      h2 {
+        background-position: -100%;
+        color: #FFF;
+        transition: all 0.5s;
+        opacity: 1;
+      }
+    }
+
+    ${StyledIcon} {
+      display: block;
+    }
+  }
+
   @media (min-width: 992px) {
-    height: 330px;
+    height: 280px;
+    border-radius: 4px;
   }
 
   a {
