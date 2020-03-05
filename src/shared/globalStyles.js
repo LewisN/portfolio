@@ -12,13 +12,15 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     background-color: white;
     font-family: ${props => props.theme.fonts.body};
+    font-weight: 400;
+    font-style: normal;
     font-size: 11px;
     line-height: 1;
     color: #111;
   }
 
   body {
-    background-image: linear-gradient(180deg, transparent 40%, #efefef 100%);
+    background-image: linear-gradient(180deg, #fff 40%, #efefef 100%);
   }
 
   body > * {
