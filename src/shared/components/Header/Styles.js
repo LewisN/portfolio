@@ -8,6 +8,7 @@ export const StyledHeader = styled.div`
   padding: 1rem;
   background-color: #FFF;
   border-bottom: 1px solid #eee;
+  line-height: normal;
 
   button {
     vertical-align: middle;

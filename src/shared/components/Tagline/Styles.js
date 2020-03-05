@@ -28,7 +28,7 @@ export const StyledTagline = styled.div`
       }
     }
 
-    @media (min-width: 350px) {
+    @media (min-width: 360px) {
       font-size: 4rem;
     }
   }
