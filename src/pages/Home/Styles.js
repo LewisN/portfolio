@@ -15,7 +15,7 @@ export const SocialIconsContainer = styled(Container)`
 
   @media (min-width: 768px) {
     padding-bottom: 12rem;
-    max-width: 550px;
+    max-width: 580px;
   }
 `;
 

@@ -35,6 +35,6 @@ export const StyledTagline = styled.div`
 
   @media (min-width: 768px) {
     padding-top: 90px;
-    max-width: 550px;
+    max-width: 580px;
   }
 `;
