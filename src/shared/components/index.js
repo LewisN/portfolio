@@ -10,6 +10,7 @@ export { default as Logo } from './Logo';
 export { default as MediaLarge } from './MediaLarge';
 export { default as Nav } from './Nav';
 export { default as PageError } from './PageError';
+export { default as Profile } from './Profile';
 export { default as ProjectIntro } from './ProjectIntro';
 export { default as ProjectList } from './ProjectList';
 export { default as ScrollToTop } from './ScrollToTop';

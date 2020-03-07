@@ -6,6 +6,7 @@ import {
   SocialIcons,
   Hero,
   ClientList,
+  Profile,
 } from '../../shared/components';
 import {
   Container,
@@ -55,6 +56,10 @@ const Home = (props) => {
           <StyledSection id="clients">
             <StyledHeading>I've worked with</StyledHeading>
             <ClientList clients={clients} />
+          </StyledSection>
+
+          <StyledSection id="profile">
+            <Profile />
           </StyledSection>
 
           <StyledSection id="projects">
