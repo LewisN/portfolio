@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import {
   StyledProjectPreview,
   StyledProjectPreviewInner,
@@ -7,8 +7,12 @@ import {
 } from './Styles';
 import { Icon } from '../../';
 
-const ProjectPreview = props => (
-  <StyledProjectPreview>
+const ProjectPreview = forwardRef((props, ref) => (
+  <StyledProjectPreview
+    onMouseEnter={props.focusOnTarget}
+    onMouseLeave={props.resetFocus}
+    ref={ref}
+  >
     <StyledProjectPreviewInner background={props.project.fields.previewImage.fields.file.url}>
       <StyledCaption>
         <div>
@@ -23,6 +27,6 @@ const ProjectPreview = props => (
       </StyledIcon>
     </StyledProjectPreviewInner>
   </StyledProjectPreview>
-);
+));
  
 export default ProjectPreview;
