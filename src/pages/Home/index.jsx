@@ -5,6 +5,7 @@ import {
   Tagline,
   SocialIcons,
   Hero,
+  ClientList,
 } from '../../shared/components';
 import {
   Container,
@@ -13,6 +14,7 @@ import {
   StyledSection,
 } from './Styles';
 import { Helmet } from 'react-helmet';
+import clients from '../../shared/data/clients';
 
 const Home = (props) => {
   useEffect(() => {
@@ -48,6 +50,11 @@ const Home = (props) => {
       </Hero>
 
       <Container>
+          <StyledSection id="clients">
+            <StyledHeading>I've worked with</StyledHeading>
+            <ClientList clients={clients} />
+          </StyledSection>
+
           <StyledSection id="projects">
             <StyledHeading>Projects</StyledHeading>
             <ProjectList />
