@@ -13,6 +13,7 @@ export const StyledProjectList = styled.ul`
     font-size: 1rem;
     vertical-align: top;
     width: 100%;
+    padding: 5px;
   }
 
   @media (min-width: 768px) {
@@ -29,8 +30,7 @@ export const StyledProjectList = styled.ul`
 
   @media (min-width: 1200px) {
     li {
-      width: 20%;
-      padding: 5px;
+      width: 25%;
     }
   }
 `;
