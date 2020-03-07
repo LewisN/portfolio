@@ -22,7 +22,7 @@ export const StyledImage = styled.div`
 `;
 
 export const StyledBackground = styled.div`
-  background-color: ${props => props.theme.palette.accent};
+  background-color: #e4e4e4;
   height: 100%;
   width: 90%;
   border-radius: 5px;
