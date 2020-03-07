@@ -3,7 +3,7 @@ import Form from './Form';
 import { FormContainer } from './Styles';
 
 const ContactForm = props => {
-  /* Names must be unique as they are IDs */
+  // Names must be unique as they are IDs
   const fields = [
     {
       name: 'Name',
