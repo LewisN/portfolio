@@ -1,11 +1,11 @@
-import React from 'react';
-import { Layout, Hero } from '../../shared/components';
+import React, { Fragment } from 'react';
+import { Hero } from '../../shared/components';
 import { Container } from './Styles'
 import { Helmet } from 'react-helmet';
 import { StyledTitle } from './Styles';
 
 const NotFound = props => (
-  <Layout>
+  <Fragment>
     <Helmet>
       <title>404 | lewisneedham.com</title>
     </Helmet>
@@ -17,7 +17,7 @@ const NotFound = props => (
         </StyledTitle>
       </Container>
     </Hero>
-  </Layout>
+  </Fragment>
 );
 
 export default NotFound;

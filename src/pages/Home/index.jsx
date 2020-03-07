@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import {
-  Layout,
   ProjectList,
   ContactForm,
   Tagline,
@@ -15,7 +14,7 @@ import {
 } from './Styles';
 import { Helmet } from 'react-helmet';
 
-const Home = () => {
+const Home = (props) => {
   useEffect(() => {
     /*
       Decode entities in the URL
@@ -35,7 +34,7 @@ const Home = () => {
   });
 
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>Lewis Needham - Front End Developer</title>
         <meta name="description" content="Portfolio of Lewis Needham - Front End Developer. Experienced JavaScript (ES6+) and React developer based in Toronto, ON." />
@@ -48,18 +47,18 @@ const Home = () => {
         </SocialIconsContainer>
       </Hero>
 
-      <StyledSection>
-        <StyledHeading>Projects</StyledHeading>
-        <ProjectList id="projects" />
-      </StyledSection>
+      <Container>
+          <StyledSection id="projects">
+            <StyledHeading>Projects</StyledHeading>
+            <ProjectList />
+          </StyledSection>
 
-      <StyledSection>
-        <StyledHeading>Get in touch</StyledHeading>
-        <Container id="contact">
-          <ContactForm />
-        </Container>
-      </StyledSection>
-    </Layout>
+          <StyledSection id="contact">
+            <StyledHeading>Get in touch</StyledHeading>
+            <ContactForm />
+          </StyledSection>
+      </Container>
+    </Fragment>
   );
 }
 

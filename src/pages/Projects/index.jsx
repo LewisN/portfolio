@@ -1,15 +1,14 @@
 import React, { Fragment } from 'react';
-import { Layout, Hero } from '../../shared/components';
+import { Hero } from '../../shared/components';
 import { ProjectIntro, MediaLarge } from '../../shared/components';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
 import { NotFound } from '../';
-import { PROJECTS_PATH } from '../../constants/paths';
 
+/** Individual project page */
 const Project = props => {
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>Lewis Needham - Front End Developer</title>
         <meta name="description" content="Portfolio of Lewis Needham - Front End Developer. Experienced JavaScript (ES6+) and React developer based in Toronto, ON." />
@@ -44,31 +43,22 @@ const Project = props => {
           ))}
         </Fragment>
       )}
-    </Layout>
+    </Fragment>
   );
 };
 
-/**
- * Projects component should only provide routing and loading states to
- * Project pages, nothing more.
- */
-const Projects = props => (
-  <Fragment>
-    {!props.projects.isLoaded && <NotFound text="Loading..." />}
-
-    {props.projects.isLoaded && props.projects.items.length && 
-      <Route path={`${PROJECTS_PATH}/:path`} render={routeProps => {
-        const { path } = routeProps.match.params;
-        const matchingProject = props.projects.items.find(item => item.fields.path === path);
-        return matchingProject ? <Project {...props} project={matchingProject} /> : <NotFound text="Project does not exist" />;
-      }} />
-    }
-
-    {props.projects.isLoaded && !props.projects.items.length &&
-      <NotFound text="Project does not exist" />
-    }
-  </Fragment>
-);
+/** Projects component provides routing and loading states to project pages */
+const Projects = props => {
+  if (props.projects.isLoaded && props.projects.items.length && props.match) {
+    const matchingProject = props.projects.items.find(item => item.fields.path === props.match.params.path);
+    return matchingProject 
+      ? <Project {...props} project={matchingProject} />
+      : <NotFound text="Project does not exist" />;
+  } else {
+    if (!props.projects.isLoaded) return <NotFound text="Loading..." />;
+    if (props.projects.isLoaded && !props.projects.items.length) return <NotFound text="Project does not exist" />;
+  }
+};
 
 /**
  * Must be connected to Redux store so Routes can be
