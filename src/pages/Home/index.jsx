@@ -27,8 +27,10 @@ const Home = (props) => {
       const hashParts = window.location.hash.split('#');
       if (hashParts.length > 2) {
         const hash = hashParts.slice(-1)[0];
-        const anchorElement = document.querySelector(`#${hash}`);
-        if (anchorElement) anchorElement.scrollIntoView();
+        if (hash) {
+          const anchorElement = document.querySelector(`#${hash}`);
+          if (anchorElement) anchorElement.scrollIntoView();
+        }
       }
     };
     scrollToAnchor();
