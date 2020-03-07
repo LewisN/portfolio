@@ -24,7 +24,11 @@ const Hero = props => {
      * doesn't yet exist (i.e. the scripts are still loading in)
      */
     if (!vanta.current && props.animationLibraries.bgAnimation) {
-      vanta.current = props.animationLibraries.bgAnimation();
+      window
+        .waitForLoad
+        .then(() => requestAnimationFrame(() => {
+          vanta.current = props.animationLibraries.bgAnimation()
+        }));
     }
 
     return () => {
