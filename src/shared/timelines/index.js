@@ -1,4 +1,4 @@
-import { TimelineLite as Timeline, Power1 } from 'gsap';
+import gsap from 'gsap';
 
 /**
  * Fly in node(s) from right
@@ -6,15 +6,16 @@ import { TimelineLite as Timeline, Power1 } from 'gsap';
  * @param {Array|HTMLCollection|HTMLElement} node 
  */
 export const flyInStaggerFromRight = (node, stagger) => {
-  const timeline = new Timeline({ paused: true });
-  const staggerDuration = stagger || 0.15;
-  timeline.staggerFromTo(node, .6, {
+  const timeline = gsap.timeline({ paused: true });
+  timeline.fromTo(node, {
     left: '140%',
     opacity: 0.3,
   }, {
     left: '0%',
     opacity: 1,
-    ease: Power1.easeOut,
-  }, staggerDuration);
+    ease: 'power1.out',
+    duration: .6,
+    stagger: stagger || 0.15,
+  });
   return timeline;
 };
