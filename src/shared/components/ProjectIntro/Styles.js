@@ -40,6 +40,7 @@ export const StyledTagline = styled.h2`
 export const StyledDesc = styled.div`
   display: inline-block;
   vertical-align: top;
+  text-align: left;
 
   @media (min-width: 768px) {
     width: 66.66666667%;
@@ -49,6 +50,7 @@ export const StyledDesc = styled.div`
 export const StyledDescContainer = styled.section`
   max-width: 900px;
   margin: 0 auto;
+  text-align: center;
 `;
 
 export const StyledList = styled.div`
@@ -57,6 +59,7 @@ export const StyledList = styled.div`
   font-style: italic;
   margin-block-start: 2rem;
   margin-block-end: 1rem;
+  text-align: left;
 
   @media (min-width: 768px) {
     width: auto;
