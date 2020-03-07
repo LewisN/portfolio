@@ -1,8 +1,5 @@
 import { TimelineLite as Timeline, Power1 } from 'gsap';
 
-window.Timeline = Timeline;
-window.Power1 = Power1;
-
 /**
  * Fly in node(s) from right
  * If there are multiple nodes they will be staggered
