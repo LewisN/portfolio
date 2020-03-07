@@ -44,6 +44,7 @@ export const StyledDesc = styled.div`
 
   @media (min-width: 768px) {
     width: 66.66666667%;
+    margin-right: 8%;
   }
 `;
 
@@ -63,7 +64,6 @@ export const StyledList = styled.div`
 
   @media (min-width: 768px) {
     width: auto;
-    margin-right: 8%;
     max-width: 25%;
   }
 

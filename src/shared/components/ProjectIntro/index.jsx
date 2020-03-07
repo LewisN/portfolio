@@ -17,7 +17,14 @@ const ProjectIntro = props => (
     <StyledTitle>{props.name}</StyledTitle>
     <StyledTagline>{props.tagline}</StyledTagline>
 
-    <StyledDescContainer>    
+    <StyledDescContainer>        
+      {props?.desc ? (
+        <StyledDesc dangerouslySetInnerHTML={{
+          __html: props.desc,
+        }}>
+        </StyledDesc>
+      ) : ''}
+
       <StyledList>
         {props?.sideList ? (
           <StyledListSection>
@@ -39,13 +46,6 @@ const ProjectIntro = props => (
           </StyledListSection>
         ) : ''}
       </StyledList>
-    
-      {props?.desc ? (
-        <StyledDesc dangerouslySetInnerHTML={{
-          __html: props.desc,
-        }}>
-        </StyledDesc>
-      ) : ''}
 
       {props?.buttons ? (
         <StyledButtonContainer>
