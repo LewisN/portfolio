@@ -21,6 +21,9 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-image: linear-gradient(180deg, #fff 40%, #efefef 100%);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body > * {
@@ -80,6 +83,14 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
     line-height: 3rem;
     font-weight: 400;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+
+  #root {
+    overflow: hidden;
   }
 `;
 

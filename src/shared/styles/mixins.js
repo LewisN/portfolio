@@ -1,4 +1,6 @@
-export const container = `
+import { css } from 'styled-components';
+
+export const container = css`
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;

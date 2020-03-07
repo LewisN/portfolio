@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { container } from '../../shared/css';
+import { container } from '../../shared/styles/mixins';
 
 export const Container = styled.div`
   ${container}

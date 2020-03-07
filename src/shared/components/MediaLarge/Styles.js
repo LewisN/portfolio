@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { container } from '../../css';
+import { container } from '../../styles/mixins';
 
 export const StyledMediaLarge = styled.div`
   padding: 6rem 0;
