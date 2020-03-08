@@ -71,22 +71,22 @@ const Form = props => {
     let errors = {};
     let emailRegex = new RegExp('^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$', 'i');
 
-    if (!values.name) {
-      errors.name = "Please enter a name";
+    if (!values.Name) {
+      errors.Name = "Please enter a name";
     } else if (values.name.length > 30) {
-      errors.name = "Please enter a shorter name";
+      errors.Name = "Please enter a shorter name";
     }
 
-    if (!values.email) {
-      errors.email = "Please enter an email address";
+    if (!values.Email) {
+      errors.Email = "Please enter an email address";
     } else if (!emailRegex.test(values.email)) {
-      errors.email = "Please check your email address for mistakes";
+      errors.Email = "Please check your email address for mistakes";
     }
 
-    if (!values.message) {
-      errors.message = "Please enter a message";
+    if (!values.Message) {
+      errors.Message = "Please enter a message";
     } else if (values.name.length > 5000) {
-      errors.message = 'Please enter a shorter message (max characters: 5000)';
+      errors.Message = 'Please enter a shorter message (max characters: 5000)';
     }
 
     return errors;
