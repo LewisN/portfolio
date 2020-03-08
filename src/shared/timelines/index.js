@@ -19,3 +19,19 @@ export const flyInStaggerFromRight = (node, stagger) => {
   });
   return timeline;
 };
+
+/**
+ * Node(s) fade up from below
+ * @param {Array|HTMLCollection|HTMLElement} node 
+ */
+export const fadeInFromBottom = node => {
+  const timeline = gsap.timeline({ paused: true });
+  timeline.from(node, {
+    position: 'relative',
+    opacity: 0,
+    duration: .8,
+    top: '10px',
+    clearProps: 'all',
+  });
+  return timeline;
+};
