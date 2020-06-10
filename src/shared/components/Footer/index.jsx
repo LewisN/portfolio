@@ -10,7 +10,7 @@ const Footer = () => (
       <StyledFooterInfo>
         <div>© Lewis Needham 2020</div>
         <div>
-          <a href="mailto:hello@lewisneedham.co.uk" target="_top">hello@lewisneedham.co.uk</a>
+          <a href="mailto:hello@lewisneedham.com" target="_top">hello@lewisneedham.com</a>
         </div>
         <SocialIcons color="white" />
       </StyledFooterInfo>
